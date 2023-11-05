@@ -27,6 +27,38 @@ Este tipo organiza los elementos de forma unidimensional, ya que verticalmente o
 
 ![1698494746224](image/Seccion4Layout/1698494746224.png)
 
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StackLayoutDemo.Pages.StackLayouDemo"
+             Title="StackLayouDemo">
+    <VerticalStackLayout VerticalOptions="Center" 
+                         Spacing="10">
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" 
+            BackgroundColor="DarkBlue"/>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="End" 
+            BackgroundColor="DarkCyan"/>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand" 
+            BackgroundColor="DarkGoldenrod"/>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="Brown"/>
+    </VerticalStackLayout>
+</ContentPage>
+```
+
 # Proyecto 2 - VerticalStackLayout y HorizontalStackLayout
 
 Cuando tegamos un contenedor y quieramos que los elementos se pongan
@@ -36,10 +68,74 @@ de forma vertical o horizontal, lo podemos hacer con las etiquetas
 * Vertical Stack Layout
 
 ![1698498321510](image/Seccion4Layout/1698498321510.png)
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorizontalVerticalStackLayoutDemo.Pages.VerticalStackLayoutDemo"
+             Title="VerticalStackLayoutDemo">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkBlue"/>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkCyan"
+            />
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkGoldenrod"
+            />
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkGrey"/>
+    </VerticalStackLayout>
+</ContentPage>
+```
 
 * Horizontal Stack Layout
 
 ![1698498438402](image/Seccion4Layout/1698498438402.png)
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorizontalVerticalStackLayoutDemo.Pages.HorizontalStackLayoutDemo"
+             Title="HorizontalStackLayoutDemo">
+    <HorizontalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkBlue"/>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkCyan"
+            />   
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkGoldenrod"
+            />   
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            BackgroundColor="DarkGrey"/>
+    </HorizontalStackLayout>
+</ContentPage>
+```
 
 # Proyecto 3 - Grid Layout
 
@@ -73,6 +169,44 @@ de forma vertical o horizontal, lo podemos hacer con las etiquetas
 * Otra Forma de especificar filas y columnas
   ![1698502146284](image/Seccion4Layout/1698502146284.png)
 
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridDemo.Pages.GridDemo"
+             Title="GridDemo">
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".8*"></RowDefinition>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Button Text="Click me" HeightRequest="200"/>
+        <Button Text=".Net MAUI" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="2"
+                ></Button>
+    </Grid>-->
+    
+    <Grid 
+        RowDefinitions=".6*, .4*"
+        ColumnDefinitions=".2*, .8*"
+        >
+        <Button Text="Click me" HeightRequest="200"/>
+        <Button Text=".Net MAUI" 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2"
+            ></Button>
+    </Grid>
+</ContentPage>
+```
 # Proyecto 4 - Absolute Layout
 
 Este layout se utiliza para posicionar y dimensionar los controles utilizando
@@ -96,6 +230,24 @@ izquierda de absolute layout en unidades independientes del dispositivo.
   de utilizar el valor de ``All``
 
   ![1698546954408](image/Seccion4Layout/1698546954408.png)
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbsoluteLayoutDemo.Pages.AbsoluteLayoutPage"
+             Title="AbsoluteLayoutPage"
+             BackgroundColor="DarkRed"
+             >
+    <AbsoluteLayout>
+        <Button Text="Click Me!!"/>
+        <Button Text=".NET MAUI" 
+                AbsoluteLayout.LayoutBounds=".5, .5, .5, .5"
+                AbsoluteLayout.LayoutFlags="All"
+                />
+    </AbsoluteLayout>
+</ContentPage>
+```
 
 # Proyecto 5 - FlexLayout
 
@@ -135,3 +287,49 @@ FlexLayout y podemos utilizar el valor.
 * `FlexLayout.Order="-1"` la propiedad es para ponerle un orden a los elementos del FlexLayout, y como le ponemos -1 significa que siempre va a a estar ordenado antes de zero. Es decir que queremos posicionarlo los mas a la izquierda que podamos.
 
 ![1698559625608](image/Seccion4Layout/1698559625608.png)
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexLayoutDemo.Pages.FlexLayoutPage"
+             Title="FlexLayoutPage">
+    <FlexLayout Direction="Column">
+        <!-- Header -->
+        <Label Text="HEADER"
+               FontSize="18"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center"       
+               />
+
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1">
+            <!-- Content -->
+            <Label Text="CONTENT"
+               FontSize="18"
+               BackgroundColor="Gray"
+               HorizontalTextAlignment="Center"       
+               VerticalTextAlignment="Center"       
+               FlexLayout.Grow="1"
+               />
+
+            <!-- Navigation items -->
+            <BoxView FlexLayout.Basis="50"
+                     FlexLayout.Order="-1"
+                Color="Blue"
+                />
+
+            <!-- Aside items -->
+            <BoxView FlexLayout.Basis="50"
+                Color="Green"
+                />
+        </FlexLayout>
+        
+        <!-- Footer -->
+        <Label Text="FOOTER"
+           FontSize="18"
+           BackgroundColor="Pink"
+           HorizontalTextAlignment="Center"       
+           />
+    </FlexLayout>
+</ContentPage>
+```
